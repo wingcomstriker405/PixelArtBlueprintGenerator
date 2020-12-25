@@ -10,16 +10,16 @@
         </p>
         <h2>How to use:</h2>
         <p>
-            1) select the image<br>
-            2) select the size that you want the resulting blueprint to be in<br>
+            1) select the size that you want the resulting blueprint to be in<br>
+            2) select the image<br>
             3) generate the blueprint<br>
         </p>
         <br>
-        <img id="selectedImage" style="border:1px" width="0" height="0"/><br>
-        File: <input type="file" id="fileInput"><br>
-        <br>
         Width: <input type="text" id="widthInput"><br>
         Height:<input type="text" id="heightInput"><br>
+        <br>
+        File: <input type="file" id="fileInput"><br>
+        <img id="selectedImage" style="border:1px" width="0" height="0"/><br>
         <br>
         <button type="generateButton" onclick="generateBlueprint()">
             <h3>Generate Blueprint</h3>
@@ -27,7 +27,7 @@
 
         <br>
         <br>
-        <textarea id="result">Here will the output be!</textarea>
+        <textarea id="result">Output</textarea>
 
         <script src="main.js"></script>
     </body>
