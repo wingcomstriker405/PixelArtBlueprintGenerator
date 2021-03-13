@@ -51,18 +51,16 @@ function generateBlueprint(evt) {
             var x = (i / 4) % imageWidth;
             var y = Math.floor((i / 4) / imageWidth);
             var r = pixels[i].toString(16);
+            if(r.length == 1) r = "0" + r;
             var g = pixels[i + 1].toString(16);
+            if(g.length == 1) g = "0" + g;
             var b = pixels[i + 2].toString(16);
-            blocks.push(getBlock(x, y, b(r) + b(g) + b(b)));
+            if(b.length == 1) b = "0" + b;
+            blocks.push(getBlock(x, y, r + g + b));
         }
         var base = getBase(blocks);
         document.getElementById("result").value = JSON.stringify(base);
     }
-}
-
-function b(s) {
-    if(s.length == 1) return "0" + s;
-    else return s;
 }
 
 function getBlock(x, y, color) {
