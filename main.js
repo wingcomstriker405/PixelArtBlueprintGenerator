@@ -53,11 +53,16 @@ function generateBlueprint(evt) {
             var r = pixels[i].toString(16);
             var g = pixels[i + 1].toString(16);
             var b = pixels[i + 2].toString(16);
-            blocks.push(getBlock(x, y, r + g + b));
+            blocks.push(getBlock(x, y, b(r) + b(g) + b(b)));
         }
         var base = getBase(blocks);
         document.getElementById("result").value = JSON.stringify(base);
     }
+}
+
+function b(s) {
+    if(s.length == 1) return "0" + s;
+    else return s;
 }
 
 function getBlock(x, y, color) {
